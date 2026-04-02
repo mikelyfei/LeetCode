@@ -1,6 +1,13 @@
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
-        correct = range(1, len(nums)+1)
-        for i in range(len(nums)+1):
-            if nums[i] != correct[i]:
-                return [nums[i], correct[i]]
+        maxNum = len(nums) 
+        count = [0] * (maxNum + 1)
+        for i in range(maxNum):
+            if nums[i] <= maxNum:
+                count[nums[i]] += 1
+        for i in range(1, len(count)):
+            if count[i] == 0:
+                missing = i
+            if count[i] == 2:
+                duplicate = i
+        return [duplicate, missing]
