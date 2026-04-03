@@ -9,9 +9,9 @@ class Solution:
             if not stack:
                 stack.append([task_id, time])
             elif status == "start":
-                prev_task_id, prev_start_time = stack.pop()
+                prev_task_id, prev_start_time = stack[-1]
                 stack.append([task_id, time])
-                res[prev_task_id] += time - prev_start_time + 1
+                res[prev_task_id] += time - prev_start_time 
             elif status == "end":
                 _, start_time = stack.pop()
                 execution_time = time - start_time + 1
