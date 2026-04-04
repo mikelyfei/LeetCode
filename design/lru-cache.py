@@ -46,7 +46,7 @@ class LRUCache:
         if key in self.cache:
             node = self.cache[key]
             node.value = value
-            self.move_to_head(value)
+            self.move_to_head(node)
         else:
             
             node = Node(key, value)
