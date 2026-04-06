@@ -1,6 +1,8 @@
 class Solution:
     def waysToMakeFair(self, nums: List[int]) -> int:
         n = len(nums)
+        if n<=1:
+            return 0
         odd_prefix = []
         even_prefix = []
         op = 0
