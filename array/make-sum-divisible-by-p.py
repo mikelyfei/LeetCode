@@ -13,7 +13,7 @@ class Solution:
             if target in hashmap:
                 ans = min(ans, i-hashmap[target])
             hashmap[prefix] = i
-        return ans
+        return ans if ans < len(nums) else -1
         
         
         
