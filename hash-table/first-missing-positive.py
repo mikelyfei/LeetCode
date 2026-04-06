@@ -1,11 +1,14 @@
 class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
         n = len(nums)
-        seen = [0]*(n+1)
         for i in range(n):
-            if nums[i] < n+1:
-                seen[nums[i]] = 1
-        for i in range(1, n+1):
-            if not seen[i]:
+            num = nums[i]
+            if 0<num<n+1:
+                x = nums[num-1]
+                nums[num-1] = num
+                nums[i] = x
+        for i in range(1,n+1):
+            num = nums[i-1]
+            if num>0 and num!=i:
                 return i
-        return n+1
+        return n
