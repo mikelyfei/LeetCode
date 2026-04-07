@@ -7,7 +7,7 @@ class Solution:
                 ans.append([l, r])
             else:
                 if l<=ans[-1][-1]:
-                    ans[-1][-1]=r
+                    ans[-1][-1]=max(ans[-1][-1], r)
                 else:
                     ans.append([l, r])
         return ans
