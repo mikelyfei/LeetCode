@@ -5,7 +5,7 @@ class Solution:
             while l<=r:
                 nums[l]=(nums[l]*v)%(10e9+7)
                 l+=k
-        ans = int(0)
+        ans = 0
         for num in nums:
-            ans ^= int(num)
+            ans = int((ans^int(num))%(10e9+7))
         return ans
