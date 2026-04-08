@@ -9,4 +9,4 @@ class Solution:
                 r=mid
             else:
                 return mid
-        return l if nums[l]==target else -1
+        return l if l<len(nums) and nums[l]==target else -1
