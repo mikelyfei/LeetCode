@@ -1,5 +1,6 @@
 class Solution:
     def peakIndexInMountainArray(self, arr: List[int]) -> int:
+        arr.append(-float('inf'))
         l, r = 0, len(arr)
         while l<r:
             mid = l + (r-l)//2
