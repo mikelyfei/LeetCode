@@ -1,8 +1,11 @@
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
+        import random
         def quick_sort(nums, left, right):
             if left >= right:
                 return
+            idx = random.randint(left, right)
+            nums[left], nums[idx] = nums[idx], nums[left]
             pivot = nums[left]
             l, r = left, right
             while l<r:
