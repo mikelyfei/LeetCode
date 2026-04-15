@@ -1,8 +1,11 @@
 class Solution:
     def closestTarget(self, words: List[str], target: str, startIndex: int) -> int:
-        try:
-            targetIndex = words.index(target)
-        except ValueError:
+        if target not in words:
             return -1
         n = len(words)
-        return min(abs(targetIndex - startIndex) % n, abs(n-max(targetIndex, startIndex) + min(startIndex, targetIndex)) % n)
+        ans = float('inf')
+        for i, word in enumerate(words):
+            if word == target:
+                targetIndex = i
+                ans = min(ans, min(abs(targetIndex - startIndex) % n, abs(n-max(targetIndex, startIndex) + min(startIndex, targetIndex)) % n))
+        return ans
