@@ -5,4 +5,4 @@ class Solution:
         except ValueError:
             return -1
         n = len(words)
-        return min(abs(targetIndex - startIndex) % n, abs(n-targetIndex + startIndex) % n)
+        return min(abs(targetIndex - startIndex) % n, abs(n-max(targetIndex, startIndex) + min(startIndex, targetIndex)) % n)
