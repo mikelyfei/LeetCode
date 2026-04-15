@@ -13,5 +13,5 @@ class Solution:
                     if x<target:
                         k+=1
                     else:
-                        break
+                        return ans
         return ans
