@@ -1,6 +1,8 @@
 class Solution:
     def solveQueries(self, nums: List[int], queries: List[int]) -> List[int]:
         from collections import defaultdict
+        from bisect import bisect_left
+
         indices = defaultdict(list)
         for i, num in enumerate(nums):
             indices[num].append(i)
@@ -12,7 +14,7 @@ class Solution:
             if len(idx) == 1:
                 ans.append(-1)
                 continue
-            pos = idx.index(q)  
+            pos = bisect_left(idx, q)  
             
             prev_idx = idx[(pos - 1) % len(idx)]
             next_idx = idx[(pos + 1) % len(idx)]
