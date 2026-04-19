@@ -24,7 +24,7 @@ class Twitter:
         users.add(userId)
 
         for user in users:
-            tweet = self.tweetMap[user]
+            tweet = self.tweetMap.get(user)
             while tweet:
                 heapq.heappush(heap, [-tweet.time, tweet.tweetId])
                 tweet = tweet.next
