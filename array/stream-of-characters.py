@@ -11,7 +11,7 @@ class StreamChecker:
         self.max_len = 0
         for word in words:
             self.max_len = max(self.max_len, len(word))
-            node = root
+            node = self.root
             for ch in words[::-1]:
                 if ch not in node.children:
                     node[ch] = TrieNode()
