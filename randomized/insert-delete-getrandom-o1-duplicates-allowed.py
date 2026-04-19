@@ -8,10 +8,10 @@ class RandomizedCollection:
         self.pos = defaultdict(set)
 
     def insert(self, val: int) -> bool:
-        flag = val in self.pos
+        not_present = len(self.pos[val]) == 0
         self.nums.append(val)
         self.pos[val].add(len(self.nums) - 1)
-        return not flag
+        return not_present
 
     def remove(self, val: int) -> bool:
         if val in self.pos:
