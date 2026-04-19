@@ -12,9 +12,9 @@ class StreamChecker:
         for word in words:
             self.max_len = max(self.max_len, len(word))
             node = self.root
-            for ch in words[::-1]:
+            for ch in word[::-1]:
                 if ch not in node.children:
-                    node[ch] = TrieNode()
+                    node.children[ch] = TrieNode()
                 node = node.children[ch]
             node.is_word = True
 
