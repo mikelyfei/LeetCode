@@ -14,7 +14,7 @@ class RandomizedCollection:
         return not_present
 
     def remove(self, val: int) -> bool:
-        if val in self.pos:
+        if len(self.pos[val]) != 0:
             idx = self.pos[val].pop()
             last_val = self.nums[-1]
             last_idx = len(self.nums) - 1
