@@ -3,10 +3,10 @@ class Solution:
         intervals.sort()
         ans = []
         for start, end in intervals:
-            if not ans or start>ans[-1][1]:
-                ans.append([start, end])
-            else:
+            if ans and start<=ans[-1][1]:
                 start = min(start, ans[-1][0])
                 end = max(end, ans[-1][1])
+                ans[-1] = [start, end]
+            else:
                 ans.append([start, end])
         return ans
