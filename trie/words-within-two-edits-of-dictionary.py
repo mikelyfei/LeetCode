@@ -12,7 +12,7 @@ class Solution:
                         edits+=1
                     if edits>2:
                         break
-                if edits<=2 and q not in ans:
+                if edits<=2:
                     ans.append(q)
         return ans
         
