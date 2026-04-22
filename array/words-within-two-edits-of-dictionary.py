@@ -14,5 +14,5 @@ class Solution:
                         break
                 if edits<=2:
                     ans.append(q)
+                    break
         return ans
-        
