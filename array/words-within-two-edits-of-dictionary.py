@@ -1,6 +1,6 @@
 class Solution:
     def twoEditWords(self, queries: List[str], dictionary: List[str]) -> List[str]:
-        ans = set()
+        ans = []
         for q in queries:
             for d in dictionary:
                 if len(q)!=len(d):
@@ -12,7 +12,7 @@ class Solution:
                         edits+=1
                     if edits>2:
                         break
-                if edits<=2:
-                    ans.add(q)
-        return list(ans)
+                if edits<=2 and q not in ans:
+                    ans.append(q)
+        return ans
         
