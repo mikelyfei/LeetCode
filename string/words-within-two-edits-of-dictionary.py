@@ -14,5 +14,5 @@ class Solution:
                         break
                 if edits<=2:
                     ans.add(q)
-        return ans
+        return list(ans)
         
